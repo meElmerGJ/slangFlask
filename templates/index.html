@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<!-- Required meta tags -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<link href="https://fonts.googleapis.com/css?family=Roboto:300,400&display=swap" rel="stylesheet">
+
+	<link rel="stylesheet" href="../static/fonts/icomoon/style.css">
+
+	<link rel="stylesheet" href="../static/css/owl.carousel.min.css">
+
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="../static/css/bootstrap.min.css">
+
+	<!-- Style -->
+	<link rel="stylesheet" href="../static/css/style.css">
+
+	<title>Table #8</title>
+</head>
+<body>
+<div class="content">
+
+	<div class="container">
+		<h1>
+			Slang Panameño
+		</h1>
+		<div class="table-responsive custom-table-responsive">
+			<div class="text-white-50">
+				Words
+			</div>
+			<table class="table custom-table">
+				<thead>
+				<tr scope="row">
+					<th scope="col">Word</th>
+					<th scope="col">Meaning</th>
+				</tr>
+				</thead>
+				<tbody>
+				{% for doc in documents %}
+					<tr scope="row">
+						<td >
+							{{ doc.word }}
+						</td>
+						<td >
+							{{ doc.meaning }}
+						</td>
+				{% endfor %}
+				</tbody>
+			</table>
+			<br>
+			<form class="custom-table">
+				<a id="def_btn" href="/new_word" class="btn-success">New Word</a>
+				<a id="def_btn" href="/edit_word" CLASS="btn-success">Edit Word</a>
+				<a id="def_btn" href="/search_word" CLASS="btn-success">Search Word</a>
+				<a id="def_btn" href="/del_word" CLASS="btn-success">Delete Word</a>
+			</form>
+		</div>
+
+
+	</div>
+
+</div>
+
+
+
+<script src="../static/js/jquery-3.3.1.min.js"></script>
+<script src="../static/js/popper.min.js"></script>
+<script src="../static/js/bootstrap.min.js"></script>
+<script src="../static/js/main.js"></script>
+</body>
+</html>

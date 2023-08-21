@@ -1,0 +1,14 @@
+{%extends 'base.html'%} <---------------------
+    {%block content%}
+		<form action="/new_word" method="post" style="margin: 10px">
+			<label class="text-white-50" for="word" style="padding: 20px">Word: </label>
+			<input type="text" id="wordId" name="word">
+
+			<label class="text-white-50" for="meaning" style="padding: 20px">Meaning: </label>
+			<input type="text" id="meaningId" name="meaning">
+
+			<!-- Add more input fields based on your document structure -->
+
+			<input type="submit" value="Agregar Palabra" style="margin: 20px">
+		</form>
+    {%endblock%}
