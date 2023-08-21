@@ -1,14 +1,45 @@
 {%extends 'base.html'%} <---------------------
     {%block content%}
-		<form action="/new_word" method="post" style="margin: 10px">
-			<label class="text-white-50" for="word" style="padding: 20px">Word: </label>
-			<input type="text" id="wordId" name="word">
+		<br>
+		<h2 style="color: #1c7430">
+			Editar Palabra
+		</h2>
+		<div>
+			<div class="table-responsive custom-table-responsive">
+			<div class="text-white-50">
+				Words
+			</div>
+			<table class="table custom-table">
+				<thead>
+				<tr scope="row">
+					<th scope="col">Word</th>
+					<th scope="col">Meaning</th>
+				</tr>
+				</thead>
+				<tbody>
+				{% for doc in documents %}
+					<tr scope="row">
+						<td >
+							{{ doc.word }}
+						</td>
+						<td >
+							{{ doc.meaning }}
+						</td>
+				{% endfor %}
+				</tbody>
+			</table>
+			</div>
+			<br>
+			<form action="/edit_word" method="post" style="margin: 10px">
+				<label class="text-white-50" for="word" style="padding: 20px">Word: </label>
+				<input type="text" id="wordId" name="word">
 
-			<label class="text-white-50" for="meaning" style="padding: 20px">Meaning: </label>
-			<input type="text" id="meaningId" name="meaning">
+				<label class="text-white-50" for="meaning" style="padding: 20px">Meaning: </label>
+				<input type="text" id="meaningId" name="meaning">
 
-			<!-- Add more input fields based on your document structure -->
+				<!-- Add more input fields based on your document structure -->
 
-			<input type="submit" value="Agregar Palabra" style="margin: 20px">
-		</form>
+				<input type="submit" value="Editar Palabra" style="margin: 20px">
+			</form>
+		</div>
     {%endblock%}

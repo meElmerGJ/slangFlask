@@ -24,7 +24,13 @@ def insert_slang():
 
 @app.route('/edit_word', methods=['POST', 'GET'])
 def edit_slang():
-    return render_template('edit_word.html')
+    if request.method == 'POST':
+        word = request.form.get('word')
+        meaning = request.form.get('meaning')
+        slang.update_one({'word': word}, {'$set': {'word': word, 'meaning': meaning}})
+        return redirect(url_for('index'))
+    documents = slang.find()
+    return render_template('edit_word.html', documents=documents)
 
 
 @app.route('/search_word', methods=['POST', 'GET'])

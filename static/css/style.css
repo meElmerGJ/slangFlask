@@ -1,11 +1,16 @@
 h1{
   color: white;
+  font-size: 50px;
+}
+
+h2{
+  color: #28a745;
+  font-size: 20px;
 }
 
 #def_btn{
   padding: 20px;
   margin: 50px;
-  overflow: auto;
 }
 
 .my_form{
@@ -22,8 +27,8 @@ p {
   color: #b3b3b3;
   font-weight: 300; }
 
-h2, h3, h4, h5, h6,
-.h2, .h3, .h4, .h5, .h6 {
+h3, h4, h5, h6,
+.h3, .h4, .h5, .h6 {
   font-family: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"; }
 
 a {
