@@ -35,12 +35,18 @@ def edit_slang():
 
 @app.route('/search_word', methods=['POST', 'GET'])
 def search_slang():
+    if request.method == 'POST':
+        pass
     return render_template('search_word.html')
 
 
 @app.route('/del_word', methods=['POST', 'GET'])
 def del_slang():
-    return render_template('del_word.html')
+    if request.method == 'POST':
+        word = request.form.get('word')
+        slang.delete_one({'word': word})
+    documents = slang.find()
+    return render_template('del_word.html', documents=documents)
 
 
 @app.route('/', methods=['POST', 'GET'])

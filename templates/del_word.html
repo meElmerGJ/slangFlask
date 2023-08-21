@@ -11,14 +11,14 @@
 			</div>
 			<table class="table custom-table">
 				<thead>
-				<tr scope="row">
+				<tr>
 					<th scope="col">Word</th>
 					<th scope="col">Meaning</th>
 				</tr>
 				</thead>
 				<tbody>
 				{% for doc in documents %}
-					<tr scope="row">
+					<tr>
 						<td >
 							{{ doc.word }}
 						</td>
@@ -30,16 +30,13 @@
 			</table>
 			</div>
 			<br>
-			<form action="/edit_word" method="post" style="margin: 10px">
-				<label class="text-white-50" for="word" style="padding: 20px">Word: </label>
+			<form action="/del_word" method="post" style="margin: 10px">
+				<label class="text-white-50" for="wordId" style="padding: 20px">Word: </label>
 				<input type="text" id="wordId" name="word">
-
-				<label class="text-white-50" for="meaning" style="padding: 20px">Meaning: </label>
-				<input type="text" id="meaningId" name="meaning">
 
 				<!-- Add more input fields based on your document structure -->
 
-				<input type="submit" value="Editar Palabra" style="margin: 20px">
+				<input type="submit" value="Eliminar Palabra" style="margin: 20px">
 			</form>
 		</div>
     {%endblock%}
