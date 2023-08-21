@@ -36,7 +36,9 @@ def edit_slang():
 @app.route('/search_word', methods=['POST', 'GET'])
 def search_slang():
     if request.method == 'POST':
-        pass
+        word = request.form.get('word')
+        documents = slang.find({"word": word})
+        return render_template('search_word.html', documents=documents)
     return render_template('search_word.html')
 
 
